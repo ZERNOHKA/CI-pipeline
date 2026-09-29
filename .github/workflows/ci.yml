@@ -1,0 +1,23 @@
+name: My first CI pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Скачать код
+        uses: actions/checkout@v4
+
+      - name: Установить Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Установить зависимости
+        run: npm install
+
+      - name: Запустить тесты
+        run: npm test
