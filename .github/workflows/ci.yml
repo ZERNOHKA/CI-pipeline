@@ -1,6 +1,10 @@
 name: My first CI pipeline
 
 on:
+  push:
+    branches:
+      - main
+
   workflow_dispatch:
 
 jobs:
